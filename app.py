@@ -43,12 +43,11 @@ def format_phone(input_number):
 
 # Interface principal
 st.title("Templo de Campinas 🕌")
-st.subheader("Cadastro para Caravana 18/04 🚌")
+st.subheader("📝 Formulário de Cadastro à Caravana 12/07 🚌")
 
 # Container do formulário de cadastro
 with st.container(border=True):
-    st.markdown("### 📝 Formulário de Cadastro")
-    
+
     with st.form("cadastro_form", clear_on_submit=True):
         col1, col2 = st.columns(2)
         
@@ -79,7 +78,7 @@ with st.container(border=True):
         
         ordenancas = st.multiselect(
             "Ordenanças que fará*",
-            options=["Batistério", "Confirmação", "Iniciatória", 
+            options=["Própria","Batistério", "Confirmação", "Iniciatória", 
                     "Investidura", "Selamento"]
         )
         
@@ -119,15 +118,14 @@ if submitted:
 
 # Container de visualização de dados
 with st.container(border=True):
-    st.markdown("### 📋 Lista de Inscritos")
-    
-    if st.button("🔒 Exibir Inscrições", key="ver_inscricoes"):
+
+    if st.button("🔒 Exibir Inscritos", key="ver_inscricoes"):
         st.session_state.show_table = True
 
     if st.session_state.get('show_table', False):
         if 'authenticated' not in st.session_state:
             password = st.text_input("Digite a senha para visualizar:", type="password")
-            if password == "alageisel2025":
+            if password == "estacabauru2025":
                 st.session_state.authenticated = True
                 st.rerun()
             elif password:
