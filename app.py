@@ -137,7 +137,7 @@ with st.container(border=True):
             rg = st.text_input("RG*", max_chars=20, help="Apenas números")
         
         with col2:
-            idade = st.number_input("Idade*", min_value=12, max_value=120, value=18)
+            idade = st.number_input("Idade*", min_value=1, max_value=120, value=18)
             celular = st.text_input("Celular*", 
                                    max_chars=16,
                                    placeholder="(00) 0 0000-0000",
